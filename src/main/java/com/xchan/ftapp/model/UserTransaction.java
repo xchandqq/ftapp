@@ -33,7 +33,7 @@ public class UserTransaction implements Serializable {
     private long id;
     
     @Column
-    private Decimal value;
+    private Decimal transactionValue;
     
     
     @OneToOne

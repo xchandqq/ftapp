@@ -32,7 +32,7 @@ public class TransactionCategory implements Serializable {
     
     @OneToOne
     @JoinColumn
-    private User owner;
+    private UserInformation owner;
     
     @Column
     private boolean standard;
@@ -62,11 +62,11 @@ public class TransactionCategory implements Serializable {
         this.name = name;
     }
 
-    public User getOwner() {
+    public UserInformation getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(UserInformation owner) {
         this.owner = owner;
     }
 

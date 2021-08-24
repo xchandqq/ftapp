@@ -5,11 +5,13 @@
  */
 package com.xchan.ftapp.util;
 
+import java.io.Serializable;
+
 /**
  *
  * @author Christian
  */
-public class Decimal {
+public class Decimal implements Serializable{
     
     private int numericalValue; //numerical value, basically any floating number multiplied by 100 and remove any floating points
     private String formattedString; //an integer with floating points

@@ -32,7 +32,7 @@ public class Account implements Serializable {
     
     @OneToOne
     @JoinColumn
-    private User owner;
+    private UserInformation owner;
     
     @Column
     private String name;
@@ -68,11 +68,11 @@ public class Account implements Serializable {
         this.userAccountId = userAccountId;
     }
 
-    public User getOwner() {
+    public UserInformation getOwner() {
         return owner;
     }
 
-    public void setOwner(User owner) {
+    public void setOwner(UserInformation owner) {
         this.owner = owner;
     }
 

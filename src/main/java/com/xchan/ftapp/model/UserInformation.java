@@ -20,7 +20,7 @@ import javax.persistence.Table;
  */
 @Table
 @Entity
-public class User implements Serializable {
+public class UserInformation implements Serializable {
     
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
