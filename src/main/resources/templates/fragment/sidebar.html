@@ -1,0 +1,23 @@
+<div th:fragment="sidebar" id="sidebar" class="sidebar">
+    <div id="user-item-wrap" class="sidebar-item">
+        <button th:text="@{fullname}"></button>
+    </div>
+    <div id="forms-item-wrap" class="sidebar-item">
+        <a th:href="@{/none}">Test 1</a>
+        <a th:href="@{/none}">Test 1</a>
+        <a th:href="@{/none}">Test 1</a>
+        <a th:href="@{/none}">Test 1</a>
+    </div>
+    <div id="liability-wrap" class="accounts-wrap sidebar-item">
+        <span class="account-type-label" >Asset accounts</span>
+        <a th:each="acc : ${asset_accounts}" th:href="@{/{id}(id=${acc.userAccountId})}" th:text="${acc.name}"></a>
+    </div>
+    <div id="assets-wrap" class="accounts-wrap sidebar-item">
+        <span class="account-type-label" >Liability accounts</span>
+        <a th:each="acc : ${liability_accounts}" th:href="@{/{id}(id=${acc.userAccountId})}" th:text="${acc.name}"></a>
+    </div>
+    <div class="sidebar-item sidebar-action-item">
+        <a th:href="@{/u/add}">Add Account</a>
+        <a th:href="@{/settings}">Settings</a>
+    </div>
+</div>

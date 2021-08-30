@@ -41,10 +41,10 @@ public class TransactionCategory implements Serializable {
     private boolean queueable;
     
     @Column
-    private boolean debitCategory;
+    private boolean incomeCategory;
     
     @Column
-    private boolean creditCategory;
+    private boolean expenseCategory;
 
     public long getId() {
         return id;
@@ -86,20 +86,20 @@ public class TransactionCategory implements Serializable {
         this.queueable = queueable;
     }
 
-    public boolean isDebitCategory() {
-        return debitCategory;
+    public boolean isIncomeCategory() {
+        return incomeCategory;
     }
 
-    public void setDebitCategory(boolean debitCategory) {
-        this.debitCategory = debitCategory;
+    public void setIncomeCategory(boolean incomeCategory) {
+        this.incomeCategory = incomeCategory;
     }
 
-    public boolean isCreditCategory() {
-        return creditCategory;
+    public boolean isExpenseCategory() {
+        return expenseCategory;
     }
 
-    public void setCreditCategory(boolean creditCategory) {
-        this.creditCategory = creditCategory;
+    public void setExpenseCategory(boolean expenseCategory) {
+        this.expenseCategory = expenseCategory;
     }
     
     

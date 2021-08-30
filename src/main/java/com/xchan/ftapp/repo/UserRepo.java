@@ -6,6 +6,7 @@
 package com.xchan.ftapp.repo;
 
 import com.xchan.ftapp.model.UserInformation;
+import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -15,5 +16,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface UserRepo extends JpaRepository<UserInformation, Long>{
-    
+    public Optional<UserInformation> findByUsername(String username);
 }

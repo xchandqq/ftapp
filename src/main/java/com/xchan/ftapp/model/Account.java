@@ -51,6 +51,9 @@ public class Account implements Serializable {
     
     @Column
     private boolean initialized;
+    
+    @Column
+    private int displayOrder;
 
     public long getId() {
         return id;
@@ -122,6 +125,14 @@ public class Account implements Serializable {
 
     public void setInitialized(boolean initialized) {
         this.initialized = initialized;
+    }
+
+    public int getDisplayOrder() {
+        return displayOrder;
+    }
+
+    public void setDisplayOrder(int displayOrder) {
+        this.displayOrder = displayOrder;
     }
     
     
