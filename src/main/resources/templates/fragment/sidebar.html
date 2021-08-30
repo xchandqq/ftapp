@@ -1,6 +1,9 @@
 <div th:fragment="sidebar" id="sidebar" class="sidebar">
     <div id="user-item-wrap" class="sidebar-item">
         <button th:text="@{fullname}"></button>
+        <form th:action="@{/logout}" method="POST">
+            <input type="submit" value="Logout"/>
+        </form>
     </div>
     <div id="forms-item-wrap" class="sidebar-item">
         <a th:href="@{/none}">Test 1</a>

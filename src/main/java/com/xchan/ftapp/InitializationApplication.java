@@ -36,11 +36,11 @@ public class InitializationApplication implements ApplicationRunner{
     @Autowired
     private CategoryRepo categoryRepo;
     
-    @Autowired
-    private AccountService accountService;
-    
-    @Autowired
-    private UserService userService;
+//    @Autowired
+//    private AccountService accountService;
+//    
+//    @Autowired
+//    private UserService userService;
 
     @Override
     public void run(ApplicationArguments args) throws Exception {
@@ -48,8 +48,8 @@ public class InitializationApplication implements ApplicationRunner{
         this.createStandardCategories();
         
         //test
-        this.createUserTest();
-        this.createAccountTest();
+//        this.createUserTest();
+//        this.createAccountTest();
     }
     
     private void createAdminUser(){
@@ -89,32 +89,32 @@ public class InitializationApplication implements ApplicationRunner{
         }
     }
     
-    private void createUserTest(){
-        UserDTO userDTO = new UserDTO();
-        userDTO.setFirstname("Christian");
-        userDTO.setLastname("Abellanosa");
-        userDTO.setPassword("123");
-        userDTO.setRepeatedPassword("123");
-        userDTO.setUsername("xchandqq");
-        this.userService.addNewUser(userDTO);
-    }
+//    private void createUserTest(){
+//        UserDTO userDTO = new UserDTO();
+//        userDTO.setFirstname("Christian");
+//        userDTO.setLastname("Abellanosa");
+//        userDTO.setPassword("123");
+//        userDTO.setRepeatedPassword("123");
+//        userDTO.setUsername("xchandqq");
+//        this.userService.addNewUser(userDTO);
+//    }
     
-    private void createAccountTest(){
-        AccountCreationDTO accountCreationDTO = new AccountCreationDTO();
-        accountCreationDTO.setAsset(true);
-        accountCreationDTO.setCurrent(true);
-        accountCreationDTO.setDate("TODAY");
-        accountCreationDTO.setDisplayName("display");
-        accountCreationDTO.setInitial(true);
-        accountCreationDTO.setName("Name of account");
-        accountCreationDTO.setOwnerUsername("xchandqq");
-        accountCreationDTO.setValue("10.50");
-        accountService.addAccount(accountCreationDTO);
-        
-        accountCreationDTO.setAsset(false);
-        accountCreationDTO.setDisplayName("sdf");
-        accountCreationDTO.setName("Payables");
-        accountService.addAccount(accountCreationDTO);
-    }
+//    private void createAccountTest(){
+//        AccountCreationDTO accountCreationDTO = new AccountCreationDTO();
+//        accountCreationDTO.setAsset(true);
+//        accountCreationDTO.setCurrent(true);
+//        accountCreationDTO.setDate("TODAY");
+//        accountCreationDTO.setDisplayName("display");
+//        accountCreationDTO.setInitial(true);
+//        accountCreationDTO.setName("Name of account");
+//        accountCreationDTO.setOwnerUsername("xchandqq");
+//        accountCreationDTO.setValue("10.50");
+//        accountService.addAccount(accountCreationDTO);
+//        
+//        accountCreationDTO.setAsset(false);
+//        accountCreationDTO.setDisplayName("sdf");
+//        accountCreationDTO.setName("Payables");
+//        accountService.addAccount(accountCreationDTO);
+//    }
     
 }

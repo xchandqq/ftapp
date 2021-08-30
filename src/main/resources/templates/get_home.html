@@ -4,13 +4,50 @@ To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
 and open the template in the editor.
 -->
-<html>
+<html lang="en">
+    <head th:insert="fragment/head.html :: head"></head>
     <head>
-        <title>TODO supply a title</title>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Finance Tracker - Know what's missing</title>
     </head>
     <body>
-        <div>Home</div>
+        <div id="main">
+            <div id="main-backdrop"></div>
+            <div id="main-footer">
+                <span>Contact <a id="developer-email" href="mailto:abellanosachristian@gmail.com" target="_blank" title="Developer Email address">Developer</a></span>
+            </div>
+            <div id="login-form-wrap">
+                <div class="main-title">Title</div>
+                <div class="main-subtitle">Subtitle</div>
+                <div class="main-form">
+                    <form name="f" th:action="@{/login}" method="POST">
+                        <div class="form-message-wrap">
+                            <div th:if="${param.error}" class="error-wrap">
+                                Incorrect username/password
+                            </div>
+                            <div th:if="${param.logout}" class="logout-wrap">
+                                Successfully logged out
+                            </div>
+                        </div>
+                        <input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
+                        <div class="login-form-item">
+                            <span>Username</span>
+                            <input type="text" name="username" id="username"/>
+                        </div>
+                        <div class="login-form-item">
+                            <span>Password</span>
+                            <input type="password" name="password" id="password"/>
+                        </div>
+                        <div class="login-form-item remember-me-wrap">
+                            <input id="remember-me" type="checkbox" name="remember-me"/>
+                            <span>Remember Me</span>
+                        </div>
+                        <div class="login-form-item form-buttons">
+                            <input id="btn-login" name="submit" type="submit" value="Login"/>
+                            <a id="btn-signup" th:href="@{/sign-up}">Sign-up</a>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
     </body>
 </html>

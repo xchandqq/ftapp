@@ -8,6 +8,7 @@ package com.xchan.ftapp.contr;
 import com.xchan.ftapp.dto.ErrorMessage;
 import com.xchan.ftapp.dto.UserDTO;
 import com.xchan.ftapp.service.UserService;
+import java.security.Principal;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,8 +30,20 @@ public class UserController {
     private UserService userService;
     
     @GetMapping("/")
-    public String getHome(){
-        return UserController.GET_HOME;
+    public String getHome(Principal principal){
+        return "forward:/login";
+    }
+    
+    @GetMapping("/login")
+    public String getLogin(Principal principal){
+        if(principal!=null){            
+            System.out.println("Name: "+ principal.getName());
+            return "redirect:/u";
+        }
+        else{
+            System.out.println("no user");
+            return UserController.GET_HOME;
+        }
     }
     
     @GetMapping("/sign-up")
